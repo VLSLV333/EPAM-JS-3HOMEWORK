@@ -36,7 +36,7 @@ function negativeCount (arr){
 // console.log(negativeCount([0, -3, 5, 7])) // => 1
 function letterCount (str, piece){
     let answer = [];
-    let arrayOfAllLetters = str.split("");
+    let arrayOfAllLetters = str.split('');
     for (let key of arrayOfAllLetters){
         if (key === piece){
             answer.push(key);
@@ -47,13 +47,14 @@ function letterCount (str, piece){
 // console.log(letterCount("Marry", "r")) // => 2
 function countPoints(arr){
     let points = 0;
+    let pointsForWinning = 3;
     for (let key of arr){
-        let matchPoints = key.split(":");
+        let matchPoints = key.split(':');
         if(+matchPoints[0] > +matchPoints[1]){
-            points += 3;
+            points += pointsForWinning;
         } else if (+matchPoints[0] === +matchPoints[1]){
-            points += 1;
-        }; 
+            points += 1
+        } 
     }
     return points;
 }
